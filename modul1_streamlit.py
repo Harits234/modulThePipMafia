@@ -2,108 +2,131 @@ import streamlit as st
 
 # Konfigurasi halaman
 st.set_page_config(
-    page_title="Modul 1: Edukasi Forex Bocil Pro",
+    page_title="Modul 1: Kelas Forex Premium",
     layout="centered",
-    page_icon="📚"
+    page_icon="💼"
 )
 
+# CSS untuk desain profesional kelas mahal
 st.markdown("""
-<style>
-h1, h2, h3 {
-    color: #1F4E79;
-}
-.stApp {
-    background-color: #F3F9FF;
-}
-.block {
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 20px;
-    box-shadow: 0px 0px 10px #dbeafe;
-    margin-bottom: 20px;
-}
-</style>
+    <style>
+    body {
+        background-color: #0f1117;
+        color: #ffffff;
+    }
+    .main {
+        background-color: #0f1117;
+    }
+    .block {
+        background-color: #1a1d2b;
+        border-left: 5px solid #3b82f6;
+        padding: 25px;
+        margin-bottom: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 15px rgba(59, 130, 246, 0.3);
+    }
+    h1, h2, h3 {
+        color: #60a5fa;
+    }
+    </style>
 """, unsafe_allow_html=True)
 
-st.title("📚 Modul 1: Dasar-Dasar Forex Super Gampang")
+st.title("💼 Modul 1: Kelas Forex Profesional")
 
-st.write("Selamat datang di kelas forex untuk pemula banget! Kita belajar bareng yuk kayak bayi lagi belajar jalan. Materinya ringan tapi penting!")
+tabs = st.tabs(["Market Structure", "SNR", "Order Block", "FVG"])
 
-# ---- Market Structure
-with st.container():
+# Tab 1: Market Structure
+with tabs[0]:
     st.markdown('<div class="block">', unsafe_allow_html=True)
-    st.header("🧩 Apa Itu Market Structure?")
+    st.header("📈 Market Structure")
     st.write("""
-    Market Structure itu kayak bentuk jalan di market. Ada 3 jenis:
-    
-    - **Uptrend (Naik):** Harga bikin titik tertinggi baru (Higher High)
-    - **Downtrend (Turun):** Harga makin rendah (Lower Low)
-    - **Sideways (Datar):** Harga mondar-mandir doang
-    
-    **Cara lihatnya:**  
-    Kalau harga bikin naik-turun yang naik terus ➜ itu naik.  
-    Kalau turun-turun ➜ berarti tren turun.
-    
-    **Contoh gampang:**  
-    Bayangin harga itu kayak orang nanjak gunung → dia terus bikin jejak lebih tinggi dari sebelumnya.
+    Market Structure adalah **tulang punggung pergerakan harga**.
+
+    🧠 Bayangin market kayak orang jalan:
+    - Kalau dia naik gunung → **Uptrend**
+    - Kalau dia turun lembah → **Downtrend**
+    - Kalau dia mondar-mandir di lapangan → **Sideways**
+
+    ### ✍️ Detailnya:
+    - **Uptrend:** Harga bikin titik tertinggi baru (**Higher High**) dan titik rendah lebih tinggi (**Higher Low**)
+    - **Downtrend:** Harga bikin titik terendah baru (**Lower Low**) dan puncak yang makin pendek (**Lower High**)
+    - **Sideways:** Harga bolak-balik di satu range aja
+
+    ⛳ **Kenapa penting?**  
+    Kalau kamu bisa baca struktur ini, kamu tahu kapan harus buy, sell, atau sabar dulu.
+
+    ✨ Pro Tip:  
+    Jangan entry kalau market masih sideways & gak jelas arahnya.
     """)
     st.markdown('</div>', unsafe_allow_html=True)
 
-# ---- SNR
-with st.container():
+# Tab 2: SNR
+with tabs[1]:
     st.markdown('<div class="block">', unsafe_allow_html=True)
-    st.header("🏗️ Apa Itu SNR (Support & Resistance)?")
+    st.header("🧱 Support & Resistance (SNR)")
     st.write("""
-    SNR itu kayak **lantai dan atap** buat harga.
+    Support dan Resistance itu kayak lantai dan atap harga.
 
-    - **Support:** Tempat harga sering mantul naik ➜ kayak lantai
-    - **Resistance:** Tempat harga sering mantul turun ➜ kayak atap
+    🪟 **Support** = Area bawah tempat harga sering mantul naik  
+    🧱 **Resistance** = Area atas tempat harga sering mantul turun
 
-    **Cara pakai:**  
-    Gambar garis di tempat harga sering mantul.  
-    Kalau harga nyentuh support ➜ siap-siap Buy.  
-    Kalau nyentuh resistance ➜ siap-siap Sell.
+    ### ✍️ Gimana cara nemuin SNR?
+    - Lihat titik-titik di mana harga sering mantul 2-3 kali
+    - Tarik garis horizontal → itu jadi area penting
+
+    🔎 **Cara Entry:**
+    - Dekat support → cari sinyal Buy
+    - Dekat resistance → cari sinyal Sell
+
+    ⚠️ Jangan asal entry cuma karena harga nyentuh garis, selalu tunggu konfirmasi.
     """)
     st.markdown('</div>', unsafe_allow_html=True)
 
-# ---- Order Block
-with st.container():
+# Tab 3: Order Block
+with tabs[2]:
     st.markdown('<div class="block">', unsafe_allow_html=True)
-    st.header("🧱 Apa Itu Order Block?")
+    st.header("🏦 Order Block")
     st.write("""
-    Order Block itu zona di mana **pemain besar (big player)** naruh banyak order.
+    Order Block (OB) adalah zona di mana **institusi besar** masuk ke market.
 
-    Biasanya muncul sebelum harga **naik/jatuh tajam**.
+    Biasanya muncul:
+    - Sebelum harga naik/turun dengan keras
+    - Setelah candle besar muncul tiba-tiba
 
-    **Cara cari Order Block:**  
-    - Lihat candle besar naik/turun setelah candle kecil  
-    - Tandai area candle kecil → itu zona OB
+    ### ✍️ Gimana cara nemuin OB?
+    - Cari candle kecil/balance terakhir sebelum lonjakan besar
+    - Tandai area open-close candle itu sebagai zona OB
 
-    **Strategi:**  
-    Tunggu harga masuk ke OB ➜ baru ambil posisi Buy atau Sell.
+    ✅ Harga sering balik dulu ke OB sebelum lanjut jalan, karena:
+    - Market ngisi ulang order
+    - Institusi masukin order besar di situ
+
+    ✨ Pro Tip:  
+    OB yang valid sering muncul bareng dengan struktur pasar (confluence).
     """)
     st.markdown('</div>', unsafe_allow_html=True)
 
-# ---- FVG
-with st.container():
+# Tab 4: FVG
+with tabs[3]:
     st.markdown('<div class="block">', unsafe_allow_html=True)
-    st.header("🧯 Apa Itu FVG (Fair Value Gap)?")
+    st.header("🔍 Fair Value Gap (FVG)")
     st.write("""
-    FVG itu kayak **celah kosong antar candle** karena harga terlalu cepat gerak.
+    FVG adalah **celah kosong antar candle** yang muncul karena harga gerak terlalu cepat.
 
-    Biasanya muncul antara 3 candle:
-    - Candle 1 naik
-    - Candle 2 lompat
-    - Candle 3 lanjut naik → Nah, tengahnya kosong (gap)
+    🎯 Biasanya terjadi:
+    - Ketika ada candle impulsif yang lompat jauh
+    - Ada gap antara harga penutupan sebelumnya dan pembukaan berikutnya
 
-    **Cara pakai:**  
-    Cari gap yang belum "diisi" harga.  
-    Biasanya harga bakal balik ke celah itu dulu ➜ baru lanjut gerak.
+    ### ✍️ Cara pakai FVG:
+    - Cari celah antara candle 1, 2, dan 3 (disebut 'imbalance')
+    - Tandai zona itu, harga sering balik isi gap dulu sebelum lanjut
 
-    Jadi FVG itu kayak lubang di jalan, dan harga sering balik buat nutup lubang itu dulu.
+    💡 FVG sering jadi zona retracement alami market.
+
+    ✨ Pro Tip:  
+    Kalau FVG searah dengan OB dan struktur pasar → potensi entry super valid.
     """)
     st.markdown('</div>', unsafe_allow_html=True)
 
-# Closing
-st.success("Selesai! Kamu udah paham dasar-dasarnya. Next kita bisa lanjut Modul 2 ya! 🚀")
-
+# Penutup
+st.success("📘 Kamu sudah menyelesaikan Modul 1! Siap lanjut ke strategi lanjutan di Modul 2.")
